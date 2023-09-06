@@ -2,7 +2,12 @@
 
 Created buttons of increment and decrement and set the count state also call the API of GitHub to fetch the Repo data with provided list of Repo Names (Arr) with proper error handling.
 
-Here is the demo for the APP:
+### `Demo video`
+https://github.com/haxandev/reactJs-counterApp-apiIntegration-docker/blob/master/public/react-counter-app.mov
+
+<video src='https://github.com/haxandev/reactJs-counterApp-apiIntegration-docker/blob/master/public/react-counter-app.mov' width=180/>
+
+<img src="https://github.com/haxandev/reactJs-counterApp-apiIntegration-docker/blob/master/public/demo.png">
 
 ### `Used these dependencies`
 - react-jss for styling
