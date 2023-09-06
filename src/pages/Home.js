@@ -5,6 +5,7 @@ import { createUseStyles } from "react-jss";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThreeDots } from  'react-loader-spinner'
 
 const useStyles = createUseStyles({
   container: {
@@ -77,6 +78,7 @@ function Home() {
   const [repoCount, setRepoCount] = useState(0);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const classes = useStyles();
 
   const getRepositories = async () => {
@@ -86,9 +88,11 @@ function Home() {
       );
       setData(response.data);
       setError(null); // Clear any previous errors
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
       setError(error.message);
+      setIsLoading(false);
     }
   };
 
@@ -107,6 +111,7 @@ function Home() {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     getRepositories();
   }, [repoCount]);
 
@@ -135,7 +140,19 @@ function Home() {
           onClick={() => handleClick("increment")}
         />
       </div>
-      {error ? (
+      {isLoading ? (
+        // Show a loader while loading
+        <ThreeDots
+          height="80"
+          width="80"
+          radius="9"
+          color="hotpink"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
+        />
+      ) : error ? (
         <p className={classes.error}>
           <b>Error:</b> {error}
         </p>
@@ -159,7 +176,7 @@ function Home() {
           </ul>
         </div>
       ) : (
-        <p>Loading...</p>
+        ""
       )}
       <ToastContainer />
     </div>

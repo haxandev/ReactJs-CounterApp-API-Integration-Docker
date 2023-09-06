@@ -11,6 +11,7 @@ https://github.com/haxandev/reactJs-counterApp-apiIntegration-docker/blob/master
 - react-jss for styling
 - ReactToastify for the alert messages
 - Axios for API call
+- react-loader-spinner for loader
 
 
 You can run the project by run these commands in project directory, first you can run:
