@@ -5,7 +5,9 @@ Created buttons of increment and decrement and set the count state also call the
 ### `Demo video`
 https://github.com/haxandev/reactJs-counterApp-apiIntegration-docker/blob/master/public/react-counter-app.mov
 
-<video src='https://github.com/haxandev/reactJs-counterApp-apiIntegration-docker/blob/master/public/react-counter-app.mov' width=180/>
+<video width="320" height="240" controls>
+  <source src="https://github.com/haxandev/reactJs-counterApp-apiIntegration-docker/blob/master/public/react-counter-app.mov" type="video/mov">
+</video>
 
 <img src="https://github.com/haxandev/reactJs-counterApp-apiIntegration-docker/blob/master/public/demo.png">
 
