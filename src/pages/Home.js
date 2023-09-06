@@ -5,7 +5,7 @@ import { createUseStyles } from "react-jss";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ThreeDots } from  'react-loader-spinner'
+import { ThreeDots } from "react-loader-spinner";
 
 const useStyles = createUseStyles({
   container: {
@@ -18,10 +18,10 @@ const useStyles = createUseStyles({
   count: {
     padding: "0px 30px",
     textAlign: "center",
-    '@media (max-width: 768px)': {
-        padding: "20px 0px",
-        fontSize: "16px"
-      }
+    "@media (max-width: 768px)": {
+      padding: "20px 0px",
+      fontSize: "16px",
+    },
   },
   content: {
     padding: "20px",
@@ -32,17 +32,17 @@ const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    '@media (max-width: 768px)': {
-        display: "initial",
-      }
+    "@media (max-width: 768px)": {
+      display: "initial",
+    },
   },
   counterContainer: {
     justifyContent: "center",
     alignItems: "center",
     width: "32%",
-    '@media (max-width: 768px)': {
-        width: "100%",
-      }
+    "@media (max-width: 768px)": {
+      width: "100%",
+    },
   },
   list: {
     listStyle: "none",
@@ -100,7 +100,6 @@ function Home() {
       setError(null); // Clear any previous errors
       setIsLoading(false);
     } catch (error) {
-      console.error("Error fetching data:", error);
       setError(error.message);
       setIsLoading(false);
     }
