@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ThreeDots } from "react-loader-spinner";
+import { repos, API_BASE_URL } from "../constants";
 
 const useStyles = createUseStyles({
   container: {
@@ -74,17 +75,6 @@ const useStyles = createUseStyles({
 });
 
 function Home() {
-  const repos = [
-    "eslint/eslint",
-    "oakwood/front-end-questions",
-    "babel/babel",
-    "webpack/webpack",
-    "storybooks/storybook",
-    "facebook/react",
-    "reactjs/redux",
-    "expressjs/express",
-  ];
-
   const [repoCount, setRepoCount] = useState(0);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -94,7 +84,7 @@ function Home() {
   const getRepositories = async () => {
     try {
       const response = await axios.get(
-        `https://api.github.com/repos/${repos[repoCount]}`
+        `${API_BASE_URL}/repos/${repos[repoCount]}`
       );
       setData(response.data);
       setError(null); // Clear any previous errors
